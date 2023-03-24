@@ -44,7 +44,7 @@
     }
 
     #main p {
-        font-size: 16px;
+        font-size: 15px;
     }
 
     .nav__item a {
@@ -78,6 +78,10 @@
     .col-6:first-child{
         display: none;
 
+    }
+
+    #main h2 {
+        font-size: 25px;
     }
 }
 
