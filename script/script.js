@@ -11,7 +11,7 @@ const scrollHeader = () =>{
 // catalog
 
 const data = {
-    burgers: [
+    norma: [
         {
             name: 'super burger',
             img: '../images/poloOne.png',
@@ -19,7 +19,7 @@ const data = {
         },
         {
             name: 'pro burger',
-            img: 'https://images.immediate.co.uk/production/volatile/sites/30/2013/05/Cheeseburger-3d7c922.jpg',
+            img: '../images/photo_2023-03-24_20-27-05.jpg',
             price:150
         },
         {
@@ -28,7 +28,7 @@ const data = {
             price:180
         },
     ],
-    pizzas: [
+    batal: [
         {
             name: 'italian pizza',
             img: 'https://media-cdn.tripadvisor.com/media/photo-s/1a/7b/99/6f/pizzas-de-ate-40cm-com.jpg',
@@ -41,7 +41,29 @@ const data = {
         },
 
     ],
-    drinks: [
+    brend: [
+        {
+            name: 'pivo',
+            img: 'https://media-cdn.tripadvisor.com/media/photo-s/11/b9/6d/b0/nase-rezane-pivo.jpg',
+            price:500
+        },
+        {
+            name: 'vino',
+            img: 'https://www.tastingtable.com/img/gallery/the-best-way-to-drink-chilled-red-wine/l-intro-1660412521.jpg',
+            price:1000
+        },
+        {
+            name: 'vodka',
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4zJnVB3ClNwB4qV_mSiepqNfI6eQaidjLyw&usqp=CAU',
+            price:2000
+        },
+        {
+            name: 'tequila',
+            img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_FnYASy60LXK2iwxu01N6oBpKKEwJ4d6DKg&usqp=CAU',
+            price:3000
+        },
+    ],
+    sportCost: [
         {
             name: 'pivo',
             img: 'https://media-cdn.tripadvisor.com/media/photo-s/11/b9/6d/b0/nase-rezane-pivo.jpg',
@@ -65,10 +87,11 @@ const data = {
     ]
 }
 
-const burgers = data.burgers
-const pizzas = data.pizzas
-const drinks = data.drinks
-const all = [...burgers,...pizzas,...drinks]
+const norma = data.norma
+const batal = data.batal
+const brend = data.brend
+const sportCost = data.sportCost
+const all = [...norma,...batal,...brend,...sportCost]
 
 const categories = (data) =>{
     console.log(data);
@@ -79,7 +102,7 @@ const categories = (data) =>{
         const box = document.createElement('div')
         const img = document.createElement('img')
         const name = document.createElement('p')
-        const price = document.createElement('p')
+        // const price = document.createElement('p')
 
         col.className='col-4'
         box.className='categories__box'
@@ -87,10 +110,10 @@ const categories = (data) =>{
 
         img.src=el.img
         name.textContent=el.name
-        price.textContent=`${el.price}₽`
+        // price.textContent=`${el.price}₽`
 
 
-        box.append(img,name,price)
+        box.append(img,name)
         col.append(box)
         output.append(col)
     })
@@ -99,20 +122,25 @@ categories(all)
 
 const categoryChoise = [
     {
-        title:'all',
+        title:'Все',
         data:all
     },
     {
-        title:'burgers',
-        data:burgers
+        title:'Норма',
+        data:norma
     },
     {
-        title:'pizzas',
-        data:pizzas
+        title:'Батал',
+        data:batal
     },
     {
-        title:'drinks',
-        data:drinks
+        title:'Бренд',
+        data:brend
+    },
+    {
+        title:'Спорт.кост',
+        data:sportCost
+
     }
 ]
 
