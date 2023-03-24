@@ -19,7 +19,7 @@ const data = {
         },
         {
             name: 'pro burger',
-            img: '../images/photo_2023-03-24_20-27-05.jpg',
+            img: './images/photo_2023-03-24_20-27-05.jpg',
             price:150
         },
         {
